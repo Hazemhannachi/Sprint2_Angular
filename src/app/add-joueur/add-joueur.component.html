@@ -1,0 +1,46 @@
+<div class="container">
+  <div>
+  <h2>Ajouter un Joueur :</h2>
+  </div>
+  <form >
+    <div  hidden class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID Joueur</label>
+    <input type="text" [(ngModel)]="newJoueur.idJoueur" name="idJoueur" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom Joueur</label>
+    <input type="text"[(ngModel)]= "newJoueur.nomJoueur" name="nomJoueur" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Num Joueur</label>
+    <input type="number" [(ngModel)]= "newJoueur.numJoueur" name="numJoueur" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+    <label >Date Transfert</label>
+    <input type="date" [(ngModel)]= "newJoueur.dateTransfert" name="dateTransfert" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Equipes </label>
+      <select
+        class="form-control form-control-lg"
+        id="IdEquipe"
+        name="IdEquipe"
+        [(ngModel)]="idEquipe"
+      >
+        <option *ngFor="let equ of equipes" [value]="equ.idEquipe">
+          {{ equ.nomEquipe }}
+        </option>
+      </select>
+    </div>
+
+
+    <div class="mt-2">
+    <button type="submit" (click)="addJoueur()" class="btn btn-success">Ajouter</button>
+
+    <div>
+      <h3>{{message}}</h3>
+    </div>
+
+  </div>
+    </form>
+  </div>

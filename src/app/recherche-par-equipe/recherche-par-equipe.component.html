@@ -1,0 +1,40 @@
+
+  <div class="container">
+    <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+      <label>Equipes </label>
+      <select
+        class="form-control form-control-lg"
+        id="IdEquipe"
+        name="IdEquipe"
+        [(ngModel)]="idEquipe"
+        (change)="onChange()"
+      >
+        <option *ngFor="let equ of equipes" value="{{ equ.idEquipe }}">
+          {{ equ.nomEquipe }}
+        </option>
+      </select>
+    </div>
+
+    <div class="card shadow mb-4">
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr> <th>Id</th><th>NomJoueur</th> <th>NumJoueur</th> <th>Date Transfert</th> <th>Equipe</th> <th>Actions</th> </tr>
+
+          </thead>
+          <tbody *ngFor="let joueur of joueurs">
+            <tr>
+              <td>{{joueur.idJoueur}}</td>
+              <td>{{joueur.nomJoueur}}</td>
+              <td>{{joueur.numJoueur}}</td>
+              <td>{{joueur.dateTransfert | date:'dd/MM/yyyy'}}</td>
+              <td>{{joueur.equipe.nomEquipe}}</td>
+              <td><a class="btn btn-success" [routerLink]="['/updateJoueur',joueur.idJoueur]">Modifier</a>
+                <a class="btn btn-danger" (click)="supprimerJoueur(joueur)">Supprimer</a></td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
