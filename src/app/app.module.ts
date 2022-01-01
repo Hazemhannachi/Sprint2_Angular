@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { UpdateJoueurComponent } from './update-joueur/update-joueur.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RechercheParEquipeComponent } from './recherche-par-equipe/recherche-par-equipe.component';
+import { LoginComponent } from './login/login.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 
 
@@ -18,7 +20,9 @@ import { RechercheParEquipeComponent } from './recherche-par-equipe/recherche-pa
     JoueursComponent,
     AddJoueurComponent,
     UpdateJoueurComponent,
-    RechercheParEquipeComponent
+    RechercheParEquipeComponent,
+    LoginComponent,
+    ForbiddenComponent
   ],
   imports: [
     HttpClientModule,

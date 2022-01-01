@@ -10,8 +10,8 @@
   <td>{{joueur.numJoueur}}</td>
   <td>{{joueur.dateTransfert | date:'dd/MM/yyyy'}}</td>
   <td>{{joueur.equipe.nomEquipe}}</td>
-  <td><a class="btn btn-success" [routerLink]="['/updateJoueur',joueur.idJoueur]">Modifier</a>
-          <a class="btn btn-danger" (click)="supprimerJoueur(joueur)">Supprimer</a></td>
+  <td><a *ngIf="authService.isAdmin()" class="btn btn-success" [routerLink]="['/updateJoueur',joueur.idJoueur]">Modifier</a>
+      <a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="supprimerJoueur(joueur)">Supprimer</a></td>
   </tr>
   </tbody>
   </table>
