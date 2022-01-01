@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RechercheParEquipeComponent } from './recherche-par-equipe/recherche-par-equipe.component';
 import { LoginComponent } from './login/login.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { AuthentificationService } from './services/authentification.service';
 
 
 
@@ -30,7 +31,7 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthentificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
